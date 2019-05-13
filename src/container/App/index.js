@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router,Route,Switch} from "react-router-dom";
-import Homepage from "../Homepage";
-import Detailpage from "../Detailpage";
-import Loginpage from "../Loginpage";
-import Searchpage from "../Searchpage";
+import Lazyload from "../../util/asyncLoad";
+const Homepage = Lazyload(()=>import("../Homepage"));
+const Detailpage = Lazyload(()=>import("../Detailpage"));
+const Loginpage = Lazyload(()=>import("../Loginpage"));
+const Searchpage = Lazyload(()=>import("../Searchpage"));
 
 export default class App extends Component {
     render() {   
