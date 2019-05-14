@@ -26,17 +26,21 @@ export default store => next => action=>{
     
     next(requesting);
 
-    get({url:url}).then((res)=>{
+    let timer=setTimeout(() => {
+      
+      clearTimeout(timer);
+
+      get({url:url}).then((res)=>{
 
         return next(operate(success,res));
 
-    }).catch(()=>{
+      }).catch(()=>{
 
-        next(fail);
+          next(fail);
 
-    })
+      })
 
-
+    }, 500);
 
 }
 

@@ -15,3 +15,11 @@ code {
   margin:0;
   padding:0;
 }
+
+.box::after{
+  content:"";
+  display: block;
+  width:0;
+  height:0;
+  clear: both;
+}

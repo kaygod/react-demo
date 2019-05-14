@@ -14,12 +14,12 @@ class Homepage extends Component {
   }
 
   render() {
-    const { likes,recommends,loadingFlag } = this.props;
+    const { likes,recommends,loadingFlag,history } = this.props;
     return (
       <div className="home">
-            <Header/>
-            <Likes likes={likes}/>
-            <Recommends recommends={recommends}/>
+            <Header title="首页" goBack={false} history={ history }/>
+            <Likes likes={likes} history={ history }/>
+            <Recommends recommends={recommends} history={ history }/>
             <Loading is_show={loadingFlag}/>
       </div>
     )

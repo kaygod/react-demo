@@ -43,6 +43,12 @@ export const actions={
     
     return (dispatch,getState)=>{
 
+        let likes =  getLikes(getState());
+
+        if(likes.length>0){
+          return false;
+        }
+
         let params={
             url:"/data/likes.json",
             types:[
@@ -60,6 +66,12 @@ export const actions={
   loadRecommends:()=>{
 
     return (dispatch,getState)=>{
+
+      let recoms =  getRecommends(getState());
+
+      if(recoms.length>0){
+        return false;
+      }
 
         let params={
             url:"/data/recommends.json",

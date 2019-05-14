@@ -17,7 +17,7 @@ export default class Recommends extends Component {
                 {
                     recommends.map((item)=>(
 
-                    <div className="content" key={item.id}>
+                    <div className="content" key={item.id} onClick={()=>{this.jump(item.id)}}>
                             <p>名称:<span className="space">{item.name}</span></p>
                             <p>描述:<span className="space">{item.desc}</span></p>
                     </div>
@@ -27,4 +27,11 @@ export default class Recommends extends Component {
             </div>    
         );
     }
+    
+    jump=(id)=>{
+
+        this.props.history.push(`/detail/${id}`);
+ 
+     }
+
 }
