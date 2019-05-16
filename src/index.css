@@ -23,3 +23,11 @@ code {
   height:0;
   clear: both;
 }
+
+.lt{
+  float: left;
+}
+
+.gt{
+  float:right;
+}
