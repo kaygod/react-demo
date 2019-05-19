@@ -17,7 +17,7 @@ class Homepage extends Component {
     const { likes,recommends,loadingFlag,history } = this.props;
     return (
       <div className="home">
-            <Header title="首页" goBack={false} history={ history } goSearch={true}/>
+            <Header title="首页" goBack={false} history={ history } goSearch={true} login={true}/>
             <Likes likes={likes} history={ history }/>
             <Recommends recommends={recommends} history={ history }/>
             <Loading is_show={loadingFlag}/>

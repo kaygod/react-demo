@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import Lazyload from "../../util/asyncLoad";
+import Privateroute from "../../container/Privateroute";
 const Homepage = Lazyload(()=>import("../Homepage"));
 const Detailpage = Lazyload(()=>import("../Detailpage"));
 const Loginpage = Lazyload(()=>import("../Loginpage"));
@@ -17,7 +18,7 @@ export default class App extends Component {
                         <Route path="/detail/:id" component={Detailpage}/>
                         <Route path="/login" component={Loginpage} />
                         <Route path="/search" component={Searchpage} />
-                        <Route path="/resultpage/:name" component={Resultpage} />
+                        <Privateroute path="/resultpage/:name" component={Resultpage} />
                </Switch>
             </Router>    
 

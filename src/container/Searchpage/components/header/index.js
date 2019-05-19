@@ -13,7 +13,7 @@ export default class Header extends Component {
              <div className="search-header">
                 <div className="top">
 
-                    <div className="back">返回</div>
+                    <div className="back" onClick={this.props.back}>返回</div>
                     <div className="center">
                         <input type="text" onChange={this.setInput} value={keyword}/>
                         {keyword.length>0 && <span className="close" onClick={this.props.close}>x</span> } 

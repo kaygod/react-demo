@@ -80,6 +80,10 @@ class Searchpage extends Component {
         this.props.history.push(`/resultpage/${kw}`);
     }
 
+    back=()=>{
+        this.props.history.goBack();
+    }
+
     close=()=>{
         const { searchAction } = this.props;
         searchAction.clearInput();
@@ -89,7 +93,7 @@ class Searchpage extends Component {
         const { historyKeys,hotKeys,searchContent,keyword} = this.props;
         return (
             <div className="search">
-                <Header updateContent={this.updateContent} close={this.close} searchContent={searchContent} jump={this.jump} keyword={keyword}/>
+                <Header back={this.back} updateContent={this.updateContent} close={this.close} searchContent={searchContent} jump={this.jump} keyword={keyword}/>
                 <HotKey hotKeys={hotKeys} jump={this.jump} />
                 {historyKeys.length>0?<SearchHistory jump={this.jump} clear={this.clear} historyKeys={historyKeys} />:null}          
             </div>
